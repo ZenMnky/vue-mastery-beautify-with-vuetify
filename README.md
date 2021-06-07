@@ -1,5 +1,7 @@
 # vuetify-dashboard
 
+https://www.vuemastery.com/courses/beautify-with-vuetify
+
 ## Project setup
 ```
 npm install
