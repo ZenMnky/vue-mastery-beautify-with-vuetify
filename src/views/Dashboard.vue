@@ -1,18 +1,27 @@
 <template>
-  <div>
-    <h1>Dashboard</h1>
+  <v-container>
+    <h1>Dashboard v-container</h1>
 
-    <SalesGraph v-for="sale in sales" :key="`${sale.title}`" :sale="sale" />
+    <v-row>
+      <v-col v-for="sale in sales" :key="`${sale.title}`">
+        <SalesGraph :sale="sale" />
+      </v-col>
+    </v-row>
 
-    <StatisticCard
-      v-for="statistic in statistics"
-      :key="`${statistic.title}`"
-      :statistic="statistic"
-    />
+    <v-row>
+      <v-col v-for="statistic in statistics" :key="`${statistic.title}`">
+        <StatisticCard :statistic="statistic" />
+      </v-col>
+    </v-row>
 
-    <EmployeesTable :employees="employees" @select-employee="setEmployee" />
-
-    <EventTimeline :timeline="timeline" />
+    <v-row>
+      <v-col cols="8">
+        <EmployeesTable :employees="employees" @select-employee="setEmployee" />
+      </v-col>
+      <v-col cols="4">
+        <EventTimeline :timeline="timeline" />
+      </v-col>
+    </v-row>
 
     <v-snackbar v-model="snackbar">
       You have selected {{ selectedEmployee.name }},
@@ -21,7 +30,7 @@
         Close
       </v-btn>
     </v-snackbar>
-  </div>
+  </v-container>
 </template>
 
 <script>
@@ -33,6 +42,7 @@ import employeesData from '../data/employees.json';
 import timelineData from '../data/timeline.json';
 import salesData from '../data/sales.json';
 import statisticsData from '../data/statistics.json';
+
 export default {
   name: 'DashboardPage',
   components: {
