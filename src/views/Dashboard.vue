@@ -44,6 +44,7 @@ import EmployeesTable from '../components/EmployeesTable';
 import EventTimeline from '../components/EventTimeline';
 import SalesGraph from '../components/SalesGraph';
 import StatisticCard from '../components/StatisticCard';
+
 import employeesData from '../data/employees.json';
 import timelineData from '../data/timeline.json';
 import salesData from '../data/sales.json';
